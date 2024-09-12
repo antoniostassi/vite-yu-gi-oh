@@ -13,7 +13,7 @@
         },
         methods:{
             testing() {
-                store.allDataCards.forEach(element => {
+                store.allDataCards.forEach(function(element, i) {
                     console.log(element.name);
                 });
             }
@@ -30,8 +30,8 @@
             
             <div class="py-2 px-4">
                 <div class="my-row">
-                    <div class="my-card-col" >
-                        <AS_SingleCard v-for="(v, i) in store.allDataCards" :cardImg="v.card_images.image_url" :cardName="v.name" :cardCategory="v.archetype"/>
+                    <div class="my-card-col">
+                        <AS_SingleCard v-for="(v, i) in store.allDataCards" :cardName="v.name" :cardCategory="v.archetype" :cardImg="v.card_images[0].image_url"/>
                     </div>
                 </div>
             </div>

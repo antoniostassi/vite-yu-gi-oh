@@ -4,10 +4,14 @@
     export default {
         data(){
             return{
-                cardImg: String,
-                cardName: String,
-                cardCategory: String
+                
             }
+            
+        },
+        props:{
+            cardImg: String,
+            cardName: String,
+            cardCategory: String
         }
     }
 </script>
