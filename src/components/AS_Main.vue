@@ -29,10 +29,8 @@
             </div>
             
             <div class="py-2 px-4">
-                <div class="my-row">
-                    <div class="my-card-col">
-                        <AS_SingleCard v-for="(v, i) in store.allDataCards" :cardName="v.name" :cardCategory="v.archetype" :cardImg="v.card_images[0].image_url"/>
-                    </div>
+                <div class="my-row d-flex flex-wrap">
+                    <AS_SingleCard v-for="(v, i) in store.allDataCards" :cardName="v.name" :cardCategory="v.archetype" :cardImg="v.card_images[0].image_url"/>
                 </div>
             </div>
         </div>
@@ -40,7 +38,5 @@
 </template>
 
 <style scoped>
-    .my-card-col {
-        width:calc(100%/5);
-    }
+    
 </style>
