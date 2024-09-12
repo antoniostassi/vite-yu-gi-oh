@@ -4,8 +4,7 @@
     export default {
         data(){
             return{
-                store,
-                loaded: 0
+                store
             }
         },
         components:{
@@ -25,7 +24,7 @@
     <main class="bg-warning py-5">
         <div class="container-xxl bg-white p-4">
             <div class="bg-black py-2 text-white px-4">
-                <span @click="testing()">Trovate {{ loaded }} carte</span>
+                <span @click="testing()">Trovate {{ store.allDataCards.length }} carte</span>
             </div>
             
             <div class="py-2 px-4">
