@@ -10,13 +10,28 @@
         },
         components:{
             AS_SingleCard
+        },
+        methods:{
+            performSearch() {
+                console.log(this.store.archetype);
+                this.$emit('performSearch');
+            }
         }
+        
     }
 </script>
 
 <template>
     <main class="bg-warning py-5">
+        
         <div class="container-xxl bg-white p-4">
+            <form @submit.prevent="performSearch()">
+                <select name="archetypes" class="mb-3">
+                    <option value="">Select archetype</option>
+                    <option @click="store.archetype = v.archetype_name" v-for="(v, i) in store.listArchetypes" :key="i" :value="i"> {{ v.archetype_name }}</option>
+                </select>
+            </form>
+            
             <div class="bg-black py-2 text-white px-4">
                 <span v-show="store.allDataCards != []">Trovate {{ store.allDataCards.length }} carte</span>
             </div>
