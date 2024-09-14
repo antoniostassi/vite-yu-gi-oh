@@ -40,11 +40,10 @@
             getDataWithParams() {
 
                 if (this.store.archetype == "") {
-                    this.getDataFromApi();
+                    this.getDataFromApi(); // Se la categoria non è stata scelta rifai la ricerca senza API
                     return;
                 }
 
-                console.log("Helo??");
                 axios
                 .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0', {
                     params: {

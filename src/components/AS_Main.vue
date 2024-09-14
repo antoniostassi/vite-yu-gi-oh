@@ -26,10 +26,12 @@
         
         <div class="container-xxl bg-white p-4">
             <form @submit.prevent="performSearch()">
-                <select name="archetypes" class="mb-3">
+                <select v-model="store.archetype" class="mb-3">
                     <option value="">Select archetype</option>
-                    <option @click="store.archetype = v.archetype_name" v-for="(v, i) in store.listArchetypes" :key="i" :value="i"> {{ v.archetype_name }}</option>
+                    <option @click="store.archetype = v.archetype_name" v-for="(v, i) in store.listArchetypes" :key="i" :value="v.archetype_name"> {{ v.archetype_name }}</option>
                 </select>
+                <button type="submit" class="btn btn-primary ms-2 p-1">Filter</button>
+                <button @click="store.archetype = '' " type="submit" class="btn btn-primary ms-2 p-1">Reset</button>
             </form>
             
             <div class="bg-black py-2 text-white px-4">
